@@ -15,12 +15,12 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: View sw version
-      - run: sw_vers
+        run: sw_vers
   dependant-job:
     runs-on: windows latest
     needs: run-shell-commands
     steps:
       -name: echo a string
-      run: Write-Output "Windows String"
+       run: Write-Output "Windows String"
       -name: Error Step
-      run: doesnotexist
+       run: doesnotexist
