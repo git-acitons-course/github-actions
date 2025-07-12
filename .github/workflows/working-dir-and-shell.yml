@@ -1,0 +1,19 @@
+name: Working dir and shell
+on: [push]
+jobs:
+  display-wd-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display working directory & list files
+        run: |
+          pwd
+          ls -lrt
+          echo env
+
+  display-wd-info-window:
+    runs-on: windows-latest
+    steps:
+      - name: Display working dir and list files
+        run: |
+          dir
+          Get_Location
