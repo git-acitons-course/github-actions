@@ -16,4 +16,4 @@ jobs:
       - name: Display working dir and list files
         run: |
           dir
-          Get_Location
+          Get-Location
