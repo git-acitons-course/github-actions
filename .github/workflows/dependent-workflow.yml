@@ -1,0 +1,11 @@
+name: Dependent Workflow
+on:
+  workflow_run:
+    workflows: ["Working dir and shell"]
+    types: [completed]
+jobs:
+  echo-string:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo a string
+        run: echo "This is a dependent workflow that runs after 'Working dir and shell' completes."
