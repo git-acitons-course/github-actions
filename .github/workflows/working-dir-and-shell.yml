@@ -1,3 +1,4 @@
+# This file is part of a GitHub Actions workflow that displays the working directory and lists files in both Linux and Windows environments.
 name: Working dir and shell
 on: [push]
 jobs:
