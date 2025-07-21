@@ -8,5 +8,4 @@ jobs:
   echo-string:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo a string
-        run: echo "This is a dependent workflow that runs after 'Working dir and shell' completes."
+      - run: echo "This is a dependent workflow that runs after 'Working dir and shell' completes."
