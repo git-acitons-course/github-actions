@@ -12,7 +12,7 @@ on:
         default: "true"
       option:
         type: choice
-        description: "A choice input"
+        description: "A option input"
         required: true
         default: "option1"
         options:
