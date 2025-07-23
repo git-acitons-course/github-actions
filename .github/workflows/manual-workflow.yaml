@@ -1,0 +1,40 @@
+name: Manual workflow
+on:
+  workflow_dispatch:
+    inputs:
+      string:
+        description: "A string input"
+        required: true
+        default: "default value"
+      boolean:
+        description: "A boolean input"
+        required: true
+        default: "true"
+      option:
+        type: choice
+        description: "A choice input"
+        required: true
+        default: "option1"
+        options:
+          - option1
+          - option2
+          - option3
+      number:
+        description: "A number input"
+        required: true
+        default: "42"
+      environment:
+        description: "An environment input"
+        required: true
+        default: "production"
+jobs:
+  info-log:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log inputs
+        run: |
+          echo "String input: ${{ github.event.inputs.string }}"
+          echo "Boolean input: ${{ github.event.inputs.boolean }}"
+          echo "Option input: ${{ github.event.inputs.option }}"
+          echo "Number input: ${{ github.event.inputs.number }}"
+          echo "Environment input: ${{ github.event.inputs.environment }}"
