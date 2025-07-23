@@ -12,7 +12,7 @@ on:
         default: 4
         type: number
       option:
-        description: "An Options Input"
+        description: "An Option Input"
         required: true
         default: "Option 3"
         type: choice
