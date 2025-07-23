@@ -27,7 +27,7 @@ on:
       environment:
         description: "Environment"
         type: environment
-        default: production
+        default: "production"
         required: true
 
 jobs:
