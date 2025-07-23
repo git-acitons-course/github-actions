@@ -1,40 +1,42 @@
-name: Manual workflow
+name: Manually Triggered
 on:
   workflow_dispatch:
     inputs:
       string:
-        description: "A string input"
+        description: A string input
+        type: string
         required: true
-        default: "default value"
-      boolean:
-        description: "A boolean input"
-        required: true
-        default: "true"
-      option:
-        type: choice
-        description: "A option input"
-        required: true
-        default: "option1"
-        options:
-          - option1
-          - option2
-          - option3
+        default: "Default value"
       number:
-        description: "A number input"
+        description: A number input
+        default: 4
+        type: number
+      option:
+        description: "An Options Input"
         required: true
-        default: "42"
+        default: "Option 3"
+        type: choice
+        options:
+          - Option 1
+          - Option 2
+          - Option 3
+      boolean:
+        description: A boolean option
+        required: false
+        type: boolean
       environment:
-        description: "An environment input"
+        description: "Environment"
+        type: environment
         required: true
-        default: "production"
+
 jobs:
-  info-log:
+  log-info:
     runs-on: ubuntu-latest
     steps:
-      - name: Log inputs
-        run: |
-          echo "String input: ${{ github.event.inputs.string }}"
-          echo "Boolean input: ${{ github.event.inputs.boolean }}"
-          echo "Option input: ${{ github.event.inputs.option }}"
-          echo "Number input: ${{ github.event.inputs.number }}"
-          echo "Environment input: ${{ github.event.inputs.environment }}"
+      - run: echo $GITHUB_REF
+      - run: |
+          echo "String: ${{ inputs.string }}"
+          echo "Number: ${{ inputs.number }}"
+          echo "Option: ${{ inputs.option }}"
+          echo "Boolean: ${{ inputs.boolean }}"
+          echo "Environment: ${{ inputs.environment }}"
