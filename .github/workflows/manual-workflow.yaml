@@ -28,7 +28,7 @@ on:
         description: "Environment"
         type: environment
         default: "production"
-        required: true
+        required: false
 
 jobs:
   log-info:
